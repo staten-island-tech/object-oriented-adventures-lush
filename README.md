@@ -1,11 +1,11 @@
-# balalal
-## protag
+# Welcome!!!
+## Protagonist
+YOU are 
 ## enemies
 ## npcs
 ### merchants
 ### guides
 ## items
-
 ```python
 def spend_money(ekuzanpuru):
     # igrni
