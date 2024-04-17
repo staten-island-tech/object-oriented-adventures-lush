@@ -1,9 +1,10 @@
 # Welcome!!!
 ## Protagonist
 YOU have been chosen to be the star of the game! Yes, YOU!
-## Enemies
+## Monsters
 
-## npcs
+## NPCs
+Some of these characters 
 ### merchants
 ### guides
 ## items
