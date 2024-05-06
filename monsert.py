@@ -1,5 +1,7 @@
 import json
 import os
+import random
+from random import *
 class monsters():
     def __init__(self,name:str,hp:int,atk:int,drops:list,description:str):
             self.name=name
@@ -7,6 +9,11 @@ class monsters():
             self.atk=atk
             self.drops=drops # this is what sort of items they drop, be it food or weapons
             self.description=description
+    def attack(self, character):
+        attack = randint(0,monsters.__init__.atk)
+        return character.hp-attack
+    def pokemonmusic(self):
+         print(f"{self.name}")
     def __str__(self):
         return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
 
