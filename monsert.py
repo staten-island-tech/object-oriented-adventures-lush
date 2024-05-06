@@ -21,13 +21,19 @@ SwiftBot = monsters("SwiftBot", 750, 250, ["Robot Sword"], "Trauma incarnate.")
 MalakBot = monsters("MalakBot:", 1000, 300, ["Garden shears"], "The final boss. Is singlehandedly responsible for dropping HOS and GPAs.")
 Arachnia = monsters("Arachnia:", 999, 500, ["Arachnophobia", "Claustrophobia", "Spider eyes", "Web sword"], "????????????????????????")
 
-with open("data.json", "r") as f:
+with open("monsert.json", "r") as f:
     # Serialize the updated Python list to a JSON string
     data = json.load(f)
-    #song_list = [Lush, Retired_from_Sad_New_Career_in_Business, Bury_Me_at_Makeout_Creek, Puberty_2, Be_the_Cowboy, Laurel_Hell, The_Land_Is_Inhospitable_and_So_Are_We]
-    song_list = []
     ##Call classes in here
-    data.append(Cyclops.__dict__, Big_boy.__dict__, Little_boy.__dict__, Wide_boy.__dict__, Petite_boy.__dict__, Fally.__dict__, SwiftBot.__dict__, MalakBot.__dict__, Arachnia.__dict__)
+    data.append(Cyclops.__dict__)
+    data.append(Big_boy.__dict__) 
+    data.append(Little_boy.__dict__) 
+    data.append(Wide_boy.__dict__) 
+    data.append(Petite_boy.__dict__)
+    data.append(Fally.__dict__)
+    data.append(SwiftBot.__dict__) 
+    data.append(MalakBot.__dict__) 
+    data.append(Arachnia.__dict__)
 
 #No code needed below this line
 # Creates a new JSON file with the updated data
@@ -40,5 +46,5 @@ with open(new_file, "w") as f:
     f.write(json_string)
 
 # Overwrite the old JSON file with the new one
-os.remove("data.json")
-os.rename(new_file, "data.json")
+os.remove("monsert.json")
+os.rename(new_file, "monsert.json")
