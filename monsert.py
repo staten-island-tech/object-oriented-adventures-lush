@@ -13,7 +13,7 @@ class monsters():
         attack = randint(0,monsters.__init__.atk)
         return character.hp-attack
     def pokemonmusic(self):
-         print(f"{self.name}")
+         print(f"{self.name} has appeared!")
     def __str__(self):
         return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
 
