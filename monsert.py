@@ -27,6 +27,7 @@ Fally = monsters("Fally", 600, 20, ["Fear of Falling", "Ink sword"], "??????????
 SwiftBot = monsters("SwiftBot", 750, 250, ["Robot Sword"], "Trauma incarnate.")
 MalakBot = monsters("MalakBot", 1000, 300, ["Garden shears"], "The final boss. Is singlehandedly responsible for dropping HOS and GPAs.")
 Arachnia = monsters("Arachnia", 999, 500, ["Arachnophobia", "Claustrophobia", "Spider eyes", "Web sword"], "????????????????????????")
+The_maze = monsters("The maze", 4000, 0, ["Trophy of victory"], "Yeah. C'mon. What are you waiting for?")
 
 with open("monsert.json", "r") as f:
     # Serialize the updated Python list to a JSON string
@@ -41,6 +42,7 @@ with open("monsert.json", "r") as f:
     data.append(SwiftBot.__dict__) 
     data.append(MalakBot.__dict__) 
     data.append(Arachnia.__dict__)
+    data.append(The_maze.__dict__)
 
 #No code needed below this line
 # Creates a new JSON file with the updated data
