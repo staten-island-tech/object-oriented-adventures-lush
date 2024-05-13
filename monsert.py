@@ -3,6 +3,7 @@ import os
 import random
 from random import *
 class monsters():
+
     def __init__(self,name:str,hp:int,atk:int,drops:list,description:str):
             self.name=name
             self.hp=hp
@@ -13,7 +14,9 @@ class monsters():
         attack = randint(0,monsters.__init__.atk)
         return character.hp-attack
     def pokemonmusic(self):
-         print(f"{self.name} has appeared!")
+        while True:
+            random_monster = random.choice(data)
+            print(f"{self.name} has appeared!")
     def __str__(self):
         return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
 
@@ -44,16 +47,12 @@ with open("monsert.json", "r") as f:
     data.append(Arachnia.__dict__)
     data.append(The_maze.__dict__)
 
-#No code needed below this line
-# Creates a new JSON file with the updated data
+
 new_file = "updated.json"
 with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
     json_string = json.dumps(data)
 
-    # Write the JSON string to the new JSON file
     f.write(json_string)
 
-# Overwrite the old JSON file with the new one
 os.remove("monsert.json")
 os.rename(new_file, "monsert.json")
