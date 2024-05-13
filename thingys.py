@@ -24,6 +24,7 @@ class Food():
         self.description = description
     def __str__(self):
         return f"{self.name}, {self.hp_restored}, {self.type}, {self.description}"
+
     
 #WEAPONS!!!
 Small_dagger = Weapons("Small dagger", 20, "Weapon", "The very thing you begin your journey with.")
@@ -58,7 +59,32 @@ Macaron = Food("Macaron", 75, "Food", "I'm sorry most of the food is French, but
 
 with open("thingys.json", "r") as f:
     data = json.load(f)
-    #data.append(ya.__dict__)
+    data.append(Small_dagger.__dict__)
+    data.append(Big_gender_dagger.__dict__)
+    data.append(Big_boy_bat.__dict__)
+    data.append(Big_sword.__dict__)
+    data.append(Pixel_sword.__dict__)
+    data.append(Mime_sword.__dict__)
+    data.append(Ink_sword.__dict__)
+    data.append(Robot_sword.__dict__)
+    data.append(Garden_shears.__dict__)
+    data.append(Cyclops_eye.__dict__)
+    data.append(Book.__dict__)
+    data.append(Big_bag_of_nothing.__dict__)
+    data.append(Fashion_magazine.__dict__)
+    data.append(Eiffel_Tower.__dict__)
+    data.append(Fear_of_falling.__dict__)
+    data.append(Arachnophobia.__dict__)
+    data.append(Claustrophobia.__dict__)
+    data.append(Spider_eyes.__dict__)
+    data.append(Apple.__dict__)
+    data.append(Croissant.__dict__)
+    data.append(Baguette.__dict__)
+    data.append(Crepes.__dict__)
+    data.append(Choux.__dict__)
+    data.append(Macaron.__dict__)
+
+
 
     new_file = "updated.json"
     with open(new_file, "w") as f:
