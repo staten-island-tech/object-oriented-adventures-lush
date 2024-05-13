@@ -6,3 +6,5 @@ class merchant():
         info.ask_trade = ask_trade
         info.trader_ans = trader_ans
         info.experience = experience
+
+class health_bar
