@@ -1,20 +1,23 @@
 import json
 import os 
 
+class NPCs():
+    def __init__(self, name, description) -> None:
+        self.name = name
+        self.description = description
+
+dogwater = NPCs("Dogwater","Resident species.")
+Angry_lost_tech_student = NPCs("Angry lost Tech student","Forces you to finish their homework.")
 with open("npcs.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
     data = json.load(f)
     ##Call classes in here
 
 
 new_file = "updated.json"
 with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
     json_string = json.dumps(data)
 
-    # Write the JSON string to the new JSON file
     f.write(json_string)
 
-# Overwrite the old JSON file with the new one
 os.remove("npcs.json")
 os.rename(new_file, "npcs.json")
