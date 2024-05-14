@@ -1,1 +1,164 @@
-[]
+[
+    {
+        "name": "Small dagger",
+        "atk": 20,
+        "type": "Weapon",
+        "description": "The very thing you begin your journey with."
+    },
+    {
+        "name": "Big (gender) dagger",
+        "atk": 40,
+        "type": "Weapon",
+        "description": "An upgrade! Not that impressive, but still progress."
+    },
+    {
+        "name": "Big boy bat",
+        "atk": 60,
+        "type": "Weapon",
+        "description": "Despite the name, it can be used by anyone."
+    },
+    {
+        "name": "Big sword",
+        "atk": 50,
+        "type": "Weapon",
+        "description": "Yeah, well...what were you expecting? Slightly stronger than the big gender dagger."
+    },
+    {
+        "name": "Pixel sword",
+        "atk": 80,
+        "type": "Weapon",
+        "description": "Ooh, blocky!"
+    },
+    {
+        "name": "Mime sword",
+        "atk": 100,
+        "type": "Weapon",
+        "description": "Ceci n'est pas une épée (This is not a sword). (it's invisible, but does a lot of damage anyway.)"
+    },
+    {
+        "name": "Ink sword",
+        "atk": 150,
+        "type": "Weapon",
+        "description": "Weird thing from a weird guy!"
+    },
+    {
+        "name": "Robot sword",
+        "atk": 200,
+        "type": "Weapon",
+        "description": "I stole this from the kits...don't tell!"
+    },
+    {
+        "name": "Garden shears",
+        "atk": 99999999,
+        "type": "Weapon",
+        "description": "Totally not a reference to one of the most depressing games every made. Can only be used once. It does a lot of damage, but it's still fragile."
+    },
+    {
+        "name": "Cyclops' eye",
+        "type": "Charm",
+        "benefits": [
+            "Increases ATK by +24"
+        ],
+        "description": "You thought something pretty was going to be a charm? Nah."
+    },
+    {
+        "name": "Book",
+        "type": "Charm",
+        "benefits": [
+            "Increases HP Limit by +100"
+        ],
+        "description": "Wikipedia."
+    },
+    {
+        "name": "Big bag of nothing",
+        "type": "Charm",
+        "benefits": [
+            "Nothing sorry"
+        ],
+        "description": "HAHAHAHAHA!!! PRANKED!!! - Little boy"
+    },
+    {
+        "name": "Fashion magazine",
+        "type": "Charm",
+        "benefits": [
+            "Increases HP limit by +200"
+        ],
+        "description": "Ceci n'e-wait, this IS an authentic French magazine from Chanel! Smell the perfume samples and relax~"
+    },
+    {
+        "name": "Eiffel Tower",
+        "type": "Charm",
+        "benefits": [
+            "Increases ATK by +77"
+        ],
+        "description": "Merci beaucoup."
+    },
+    {
+        "name": "Fear of falling",
+        "type": "Charm",
+        "benefits": [
+            "Increases ATK by +200"
+        ],
+        "description": "Ok, I know it's not something pleasant to fit what it is, BUT-*thud*"
+    },
+    {
+        "name": "Arachnophobia",
+        "type": "Charm",
+        "benefits": [
+            "Bragging rights"
+        ],
+        "description": "The feeling of conquering your fears. Literally."
+    },
+    {
+        "name": "Claustrophobia",
+        "type": "Charm",
+        "benefits": [
+            "FEAR."
+        ],
+        "description": "Ok, I know it came from the spider but it's just for dramatic effect. You're in a maze, right? It makes sense."
+    },
+    {
+        "name": "Spider eyes",
+        "type": "Charm",
+        "benefits": [
+            "Disgust"
+        ],
+        "description": "Okay, ew."
+    },
+    {
+        "name": "Apple",
+        "hp_restored": 30,
+        "type": "Food",
+        "description": "The staple of restoration."
+    },
+    {
+        "name": "Croissant",
+        "hp_restored": 50,
+        "type": "Food",
+        "description": "Cute, but also a fun treat."
+    },
+    {
+        "name": "Baguette",
+        "hp_restored": 100,
+        "type": "Food",
+        "description": "Long boy."
+    },
+    {
+        "name": "Crepes",
+        "hp_restored": 120,
+        "type": "Food",
+        "description": "Soft and fluffy."
+    },
+    {
+        "name": "Choux",
+        "hp_restored": 115,
+        "type": "Food",
+        "description": "The staple of restoration."
+    },
+    {
+        "name": "Macaron",
+        "hp_restored": 75,
+        "type": "Food",
+        "description": "I'm sorry most of the food is French, but it has to be for now."
+    }
+]
