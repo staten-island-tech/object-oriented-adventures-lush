@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "name": "Dogwater",
+        "description": "Resident species."
+    },
+    {
+        "name": "Angry lost Tech student",
+        "description": "Forces you to finish their homework."
+    },
+    {
+        "name": "Big boy's mom",
+        "description": "She's mad."
+    }
+]
