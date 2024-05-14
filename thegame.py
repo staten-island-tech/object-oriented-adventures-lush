@@ -1,3 +1,5 @@
+import json
+
 print("As the shadows fade and the hero is faced with the challenge ahead of them...")
 name = input("What is your name?")
 print("Welcome to the maze of life, " + name + ".")
