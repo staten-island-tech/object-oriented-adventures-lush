@@ -1,7 +1,6 @@
 import random
 print("You encountered a merchant!")
 
-<<<<<<< HEAD
 class Merchant():
     def __init__(info, ask_trade, trader_ans, experience):
         info.ask_trade = ask_trade
@@ -20,6 +19,34 @@ class Merchant():
                 trader_ans == 'No'
                 print('Trader declined :(')
                 break
+
+
+class Hero:
+    def __init__(self, name, level, attack_power, health, xp):
+        self.name = name
+        self.xp = xp
+        self.level = level
+        self.attack_power = attack_power
+        self.health = health
+
+    def level_up(level, health, attack_power, xp):
+        if xp == {200, 400, 800, 1000}:
+            level = level + 1
+            health += 50
+            attack_power += 50
+
+    def attack_monster(self, monster):
+        monster.health -= self.attack_power
+        print(f"{self.name} attacks {monster.name} for {self.attack_power} damage!")
+
+    def win(self, monster):
+        if monster.health <= 0:
+            level = level + 1
+            print("You won the challenge!")
+
+    def lose(self, monster):
+        if self.health <= 0:
+            print("Game Over")
         
 class Monster():
     def __init__(self, name, attack_power, health):
@@ -28,7 +55,7 @@ class Monster():
         self.health = health
         self.damage = 0
 
-    def generate_mosnter():
+    def generate_monster():
         
 
     def attack(self, player):
@@ -38,8 +65,6 @@ class Monster():
     def take_damage(self,player,player_attack):
         self.health -= player_attack
         print(f"{player.name} attacks {self.name} for {player_attack} damage!")
-
-class NPC():
 
 
 
@@ -51,31 +76,7 @@ class NPC():
 # else:
 # 	print("challenge forfeited")
 # ####
-=======
-class merchant():
-    def __init__(self, ask_trade, trader_ans, experience):
-        self.ask_trade = ask_trade
-        self.trader_ans = trader_ans
-        self.experience = experience
-class Hero:
-    def __init__(self, name, health_bar, xp, level, attack, HP):
-    self.name = name
-    self.health_bar = health_bar
-    self.xp = xp
-    self.level = level
-
-    def name():
-        name = input('What is your name?: ')
-        print('Hello' + name)
-
-    def level_up(level, xp):
-        if xp == 200:
-            level = level + 1
-            HP += 50
-            attack += 50
-        
 
         
 
 
->>>>>>> fce41a781f8c2043da2278e65627c838373bb263
