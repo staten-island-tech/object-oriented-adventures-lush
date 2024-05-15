@@ -13,12 +13,15 @@ What they ask you to do is related to some other NPCs, items, monsters, whatever
                             - Staten Island Tech-er
     Accept Quest            You good?
 ```
+## Protagonist
+YOU are 
+## enemies
+## npcs
 ### merchants
 Buy your goods and weapons here! They'll be scattered around checkpoints in case you die or whatever.
 ### guides
 Most of this game is just inputs, so there's not a lot of complex things to do. When you fight, it's going to be slightly more difficult to comprehend. 
 ## items
-
 ```python
 def spend_money(input()):
     # igrni
