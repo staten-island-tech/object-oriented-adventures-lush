@@ -2,10 +2,10 @@ import random
 print("You encountered a merchant!")
 
 class Merchant():
-    def __init__(info, ask_trade, trader_ans, experience):
+    def __init__(info, ask_trade, trader_ans, xp):
         info.ask_trade = ask_trade
         info.trader_ans = trader_ans
-        info.experience = experience
+        info.xp = xp
 
     def trade(info, ask_trade, trader_ans):
         ask_trade = input("Would you like to trade in your weapon for an upgraded weapon? Y/N: ").upper()
@@ -13,7 +13,7 @@ class Merchant():
             trader_ans = random.randint(1,3)
             if trader_ans == 1:
                 trader_ans == 'Yes'
-                experience += 10
+                xp += 20
                 print('The trader accepts the offer!')
             else:
                 trader_ans == 'No'
