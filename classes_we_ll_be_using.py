@@ -44,7 +44,7 @@ class Hero:
             level = level + 1
             print("You won the challenge!")
 
-    def lose(self, monster):
+    def lose(self):
         if self.health <= 0:
             print("Game Over")
         
@@ -65,7 +65,6 @@ class Monster():
     def take_damage(self,player,player_attack):
         self.health -= player_attack
         print(f"{player.name} attacks {self.name} for {player_attack} damage!")
-
 
 
 
