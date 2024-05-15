@@ -20,7 +20,6 @@ class Merchant():
                 print('Trader declined :(')
                 break
 
-
 class Hero:
     def __init__(self, name, level, attack_power, health, xp):
         self.name = name
@@ -75,7 +74,3 @@ class Monster():
 # else:
 # 	print("challenge forfeited")
 # ####
-
-        
-
-
