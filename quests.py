@@ -13,3 +13,4 @@ def accept(info, ask_trade, trader_ans):
             else:
                 trader_ans == 'No'
                 print('Trader declined :(')
+                #jsgrosg

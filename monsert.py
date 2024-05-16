@@ -1,6 +1,7 @@
 import json
 import os
 import random
+#kfkfdk
 from random import *
 class monsters():
 

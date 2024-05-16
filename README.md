@@ -28,5 +28,5 @@ def spend_money(input()):
 def sell(item, user):
     qjiqji = user.money - item.cost
 def trade(item, item):
-    #w
+    #wwwww
 ```

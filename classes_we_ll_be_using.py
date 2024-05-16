@@ -74,7 +74,7 @@ class Monster():
 # 	monster.attack
 # else:
 # 	print("challenge forfeited")
-# ####
+# ######
 
         
 
