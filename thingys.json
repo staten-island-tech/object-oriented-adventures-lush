@@ -33,7 +33,7 @@
         "name": "Mime sword",
         "atk": 100,
         "type": "Weapon",
-        "description": "Ceci n'est pas une \u00c3\u00a9p\u00c3\u00a9e (This is not a sword). (it's invisible, but does a lot of damage anyway.)"
+        "description": "Ceci n'est pas une epee (This is not a sword). (it's invisible, but does a lot of damage anyway.)"
     },
     {
         "name": "Ink sword",

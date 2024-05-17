@@ -11,9 +11,6 @@ class monsters():
             self.atk=atk
             self.drops=drops # this is what sort of items they drop, be it food or weapons
             self.description=description
-    def attack(self, character):
-        attack = randint(0,monsters.__init__.atk)
-        return character.hp-attack
     def pokemonmusic(self):
         while True:
             random_monster = random.choice(data)

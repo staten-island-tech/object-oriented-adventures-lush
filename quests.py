@@ -1,5 +1,6 @@
 import random
-import merchant
+import classes_we_ll_be_using
+
 print("You encountered a merchant!")
 
 def accept(info, ask_trade, trader_ans):

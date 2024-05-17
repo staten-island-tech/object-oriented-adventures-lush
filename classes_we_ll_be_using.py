@@ -1,6 +1,9 @@
 import json
 import os
 import random
+import json
+import monsert
+monsters = open("./monsert.json", encoding="utf8")
 print("You encountered a merchant!")
 
 class Merchant():
@@ -57,6 +60,17 @@ class Monster():
         self.drops=drops # this is what sort of items they drop, be it food or weapons
         self.description = description
     
+    def __init__(self, name, attack_power, health):
+        self.name = name
+        self.attack_power = attack_power
+        self.health = health
+        self.damage = 0
+
+    def generate_monster():
+        while True:
+            random_monster = random.choice(data)
+            print(f"{self.name} has appeared!")
+
     def attack(self, player):
         player.health -= self.attack_power
         print(f"{self.name} attacks {player.name} for {self.attack_power} damage!")
