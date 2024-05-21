@@ -1,4 +1,8 @@
 import json
+import random
+from classes_we_ll_be_using import Monster
+from classes_we_ll_be_using import Hero
+
 
 print("As the shadows fade and the hero is faced with the challenge ahead of them...")
 name = input("What is your name? ")
@@ -9,21 +13,17 @@ start = input("To start, press F to walk forward: ").lower()
 if start == 'f':
     print("As you walk through the dark maze, you see all kinda of creatures on the walls and in the shadows.")
     print("Suddenly, you run into a monster!")
+    Monster.generate_monster
+    for i in Monster:
+        print()
+    Hero.attack_monster
+    print("Monster gets provoked and attacks back!")
+    Monster.attack
+
+
+
+
+
+
+
     
-    
-
-
-
-    
-
-
-
-     
-
-
-
-
-
-
-
-
