@@ -27,3 +27,4 @@ with open(new_file, "w") as f:
 
 os.remove("npcs.json")
 os.rename(new_file, "npcs.json")
+#mseomg

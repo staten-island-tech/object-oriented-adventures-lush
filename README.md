@@ -1,5 +1,5 @@
 # Welcome!!!
-Welcome to Object Oriented Adventures, made by 
+Welcome to Object Oriented Adventures, made by Jacqueline, Abeeha, and Malak.
 ## Protagonist
 YOU have been chosen to be the star of the game! Yes, YOU! You are an adventurer lost in the world's biggest and most twisted "maze" and is trying to escape.
 ## Monsters
@@ -18,12 +18,4 @@ Buy your goods and weapons here! They'll be scattered around checkpoints in case
 ### guides
 Most of this game is just inputs, so there's not a lot of complex things to do. When you fight, it's going to be slightly more difficult to comprehend. 
 ## items
-
-```python
-def spend_money(input()):
-    # igrni
-def sell(item, user):
-    qjiqji = user.money - item.cost
-def trade(item, item):
-    #w
-```
+When you defeat monsters or complete quests, this is what you'll get!

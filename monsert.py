@@ -1,6 +1,7 @@
 import json
 import os
 import random
+#kfkfdk
 from random import *
 class monsters():
 
@@ -10,9 +11,6 @@ class monsters():
             self.atk=atk
             self.drops=drops # this is what sort of items they drop, be it food or weapons
             self.description=description
-    def attack(self, character):
-        attack = randint(0,monsters.__init__.atk)
-        return character.hp-attack
     def pokemonmusic(self):
         while True:
             random_monster = random.choice(data)
@@ -24,7 +22,7 @@ Cyclops = monsters("Cyclops", 500, 200, ["Big boy bat", "Cyclops' eye", "Apple"]
 Big_boy = monsters("Big boy", 200, 50, ["Big Sword", "Book"], "Big boy. That's all.")
 Little_boy = monsters("Little boy", 40, 10, ["Big Bag of Nothing"], "Little boy." )
 Wide_boy = monsters("Wide_boy", 250, 20, ["Pixel sword"], "Wide like the Nile.")
-Pretty_boy = monsters("Pretty boy", 100, 23, ["Sparkle sword"], "So pretty it hurts")
+Pretty_boy = monsters("Pretty boy", 100, 23, ["Sparkle sword"], "So pretty it hurts.")
 Petite_boy = monsters("Petite boy", 50, 25, ["Baguette", "Croissant", "Fashion magazine", "Eiffel Tower", "Crepes", "Choux", "Macaron", "Mime sword"], "Is little guy, but French. Will drop many French things that are beneficial.")
 Fally = monsters("Fally", 600, 20, ["Fear of Falling", "Ink sword"], "??????????")
 SwiftBot = monsters("SwiftBot", 750, 250, ["Robot Sword"], "Trauma incarnate.")

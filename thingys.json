@@ -33,7 +33,7 @@
         "name": "Mime sword",
         "atk": 100,
         "type": "Weapon",
-        "description": "Ceci n'est pas une épée (This is not a sword). (it's invisible, but does a lot of damage anyway.)"
+        "description": "Ceci n'est pas une epee (This is not a sword). (it's invisible, but does a lot of damage anyway.)"
     },
     {
         "name": "Ink sword",
@@ -87,18 +87,12 @@
     },
     {
         "name": "Eiffel Tower",
-        "type": "Charm",
-        "benefits": [
-            "Increases ATK by +77"
-        ],
+        "type": "Charm", 
         "description": "Merci beaucoup."
     },
     {
         "name": "Fear of falling",
         "type": "Charm",
-        "benefits": [
-            "Increases ATK by +200"
-        ],
         "description": "Ok, I know it's not something pleasant to fit what it is, BUT-*thud*"
     },
     {

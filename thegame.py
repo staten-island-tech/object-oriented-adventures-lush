@@ -1,29 +1,24 @@
 import json
 
 print("As the shadows fade and the hero is faced with the challenge ahead of them...")
-name = input("What is your name?")
+name = input("What is your name? ")
 print("Welcome to the maze of life, " + name + ".")
 print("As you look at what you have in your bindle, you realize you came here unprepared. Let's start with a tutorial.", "go to README.md for instructions")
-def spend_money(ekuzanpuru):
-    # import
-   print("which monster would you like to vs ")
-   
-    q= monster
-    p = player 
-    x = spend_money
-    y = sell
-    z = trade
+
+start = input("To start, press F to walk forward: ").lower()
+if start == 'f':
+    print("As you walk through the dark maze, you see all kinda of creatures on the walls and in the shadows.")
+    print("Suddenly, you run into a monster!")
     
-def sell(item, user):
-    item = user.money - item.cost
-        
+    
 
 
-   
-    if p == x: 
-        print("goodjob you may now move on to the next level")
+
+    
+
+
+
      
-
 
 
 
