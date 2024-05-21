@@ -24,6 +24,11 @@ class Food():
         self.description = description
     def __str__(self):
         return f"{self.name}, {self.hp_restored}, {self.type}, {self.description}"
+class Inventory():
+    def add_item():
+        choice = input("Would you like to buy this item?")
+    def sell_item():
+        choice = input("Would you like to sell this item?")
 
     
 #WEAPONS!!!
