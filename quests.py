@@ -1,5 +1,5 @@
 import random
-import classes_we_ll_be_using
+from classes_we_ll_be_using import Merchant
 
 print("You encountered a merchant!")
 

@@ -1,10 +1,12 @@
 import json
-import os
 import random
-import json
-import monsert
 monsters = open("./monsert.json", encoding="utf8")
+items = open("./thingys.json", encoding="utf8")
+npcs = open("./npcs.json", encoding="utf8")
+data = (json.load(monsters), json.load(items), json.load(npcs))
 print("You encountered a merchant!")
+
+
 
 class Merchant():
     def __init__(info, ask_trade, trader_ans, xp):
@@ -51,7 +53,8 @@ class Hero:
     def lose(self):
         if self.health <= 0:
             print("Game Over")
-        
+
+inventory = []
 class Monster():
     def __init__(self, name:str, hp:int, attack_power:int, drops:list, health:int, description:str):
         self.name=name
@@ -59,17 +62,11 @@ class Monster():
         self.attack_power=attack_power
         self.drops=drops # this is what sort of items they drop, be it food or weapons
         self.description = description
-    
-    def __init__(self, name, attack_power, health):
-        self.name = name
-        self.attack_power = attack_power
-        self.health = health
-        self.damage = 0
 
     def generate_monster():
         while True:
             random_monster = random.choice(data)
-            print(f"{self.name} has appeared!")
+            print(f"{Monster.self.name} has appeared!")
 
     def attack(self, player):
         player.health -= self.attack_power
@@ -85,5 +82,44 @@ class Monster():
     def __str__(self):
         return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
   
-
-
+class NPCs():
+    def __init__(self, name, description) -> None:
+        self.name = name
+        self.description = description
+    def __str__(self):
+        return f"{self.name}, {self.description}"
+    
+class Items():
+    class Weapons():
+        def __init__(self,name:str,atk:int,type:str,description:str) -> None:
+            self.name = name
+            self.atk = atk
+            self.type = type
+            self.description = description
+        def __str__(self):
+            return f"{self.name}, {self.atk}, {self.type}, {self.description}"
+    class Charms():
+        def __init__(self,name:str,type:str,benefits:list,description:str) -> None:
+            self.name = name
+            self.type = type
+            self.benefits = benefits
+            self.description = description
+        def __str__(self):
+            return f"{self.name}, {self.type}, {self.benefits}, {self.description}"
+    class Food():
+        def __init__(self,name:str,hp_restored:int,type:str,description:str) -> None:
+            self.name = name
+            self.hp_restored = hp_restored
+            self.type = type
+            self.description = description
+        def __str__(self):
+            return f"{self.name}, {self.hp_restored}, {self.type}, {self.description}"
+class Inventory():
+    def add_item():
+        choice = input("Would you like to buy this item? Y or N")
+        if choice == "Y":
+            inventory.append()
+    def sell_item():
+        choice = input("Would you like to sell this item? Y or N")
+        if choice == "N":
+            inventory.remove()

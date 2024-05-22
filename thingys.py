@@ -1,44 +1,9 @@
 import json
 import os
+from classes_we_ll_be_using import Items
 
 inventory = []
 
-class Items():
-    class Weapons():
-        def __init__(self,name:str,atk:int,type:str,description:str) -> None:
-            self.name = name
-            self.atk = atk
-            self.type = type
-            self.description = description
-        def __str__(self):
-            return f"{self.name}, {self.atk}, {self.type}, {self.description}"
-    class Charms():
-        def __init__(self,name:str,type:str,benefits:list,description:str) -> None:
-            self.name = name
-            self.type = type
-            self.benefits = benefits
-            self.description = description
-        def __str__(self):
-            return f"{self.name}, {self.type}, {self.benefits}, {self.description}"
-    class Food():
-        def __init__(self,name:str,hp_restored:int,type:str,description:str) -> None:
-            self.name = name
-            self.hp_restored = hp_restored
-            self.type = type
-            self.description = description
-        def __str__(self):
-            return f"{self.name}, {self.hp_restored}, {self.type}, {self.description}"
-class Inventory():
-    def add_item():
-        choice = input("Would you like to buy this item? Y or N")
-        if choice == "Y":
-            inventory.append()
-    def sell_item():
-        choice = input("Would you like to sell this item? Y or N")
-        if choice == "N":
-            inventory.remove()
-
-    
 #WEAPONS!!!
 Small_dagger = Items.Weapons("Small dagger", 20, "Weapon", "The very thing you begin your journey with.")
 Big_gender_dagger = Items.Weapons("Big (gender) dagger", 40, "Weapon", "An upgrade! Not that impressive, but still progress.")
