@@ -30,6 +30,12 @@
         "description": "Ooh, blocky!"
     },
     {
+        "name": "Sparkle sword",
+        "atk": 90,
+        "type": "Weapon",
+        "description": "Makes me wanna cry..."
+    },
+    {
         "name": "Mime sword",
         "atk": 100,
         "type": "Weapon",
