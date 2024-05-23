@@ -39,8 +39,6 @@ class Hero:
             attack_power += 50
 
     def attack_monster(self, monster):
-        provoke = input("Press a to attack: ").lower()
-        if provoke == 'a':
             monster.health -= self.attack_power
             print(f"{self.name} attacks {monster.name} for {self.attack_power} damage!")
 
