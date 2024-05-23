@@ -27,5 +27,5 @@ print(f"Description: {random_monster['description']}")
 attack = input("enter a to attack: ").lower()
 if attack == 'a':
     Hero.attack_monster()
-    
+
 # generate a monster

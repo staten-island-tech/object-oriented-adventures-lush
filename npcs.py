@@ -1,12 +1,6 @@
 import json
 import os 
-
-class NPCs():
-    def __init__(self, name, description) -> None:
-        self.name = name
-        self.description = description
-    def __str__(self):
-        return f"{self.name}, {self.description}"
+from classes_we_ll_be_using import NPCs
 
 dogwater = NPCs("Dogwater","Resident species.")
 Angry_lost_tech_student = NPCs("Angry lost Tech student","Forces you to finish their homework.")
