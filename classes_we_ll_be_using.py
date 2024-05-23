@@ -9,24 +9,20 @@ print("You encountered a merchant!")
 
 
 class Merchant():
-    def __init__(info, ask_trade, trader_ans, xp):
-        info.ask_trade = ask_trade
-        info.trader_ans = trader_ans
-        info.xp = xp
-        
-    def trade(info, ask_trade, trader_ans):
+    def __init__(self, name):
+       self.name = name    
+    def trade(self, Hero):
         ask_trade = input("Would you like to trade in your weapon for an upgraded weapon, {Hero.self.name}, ?").upper()
         while ask_trade == 'Y':
             trader_ans = random.randint(1,3)
             if trader_ans == 1:
                 trader_ans == 'Yes'
-                xp += 20
+                Hero.xp += 20
                 print('The trader accepts the offer!')
             else:
                 trader_ans == 'No'
                 print('Trader declined :(')
                 break
-
 class Hero:
     def __init__(self, name, level, attack_power, health, xp):
         self.name = name
@@ -65,8 +61,9 @@ class Monster():
 
     def generate_monster():
         while True:
-            random_monster = random.choice(data[0])
-            print(f"{Monster.self.name} has appeared!")
+            random_monster = random.choice(data[0]['name'])
+            print(random_monster , "has appeared!")
+
 
     def attack(self, player):
         player.health -= self.attack_power
