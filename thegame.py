@@ -13,17 +13,5 @@ start = input("To start, press F to walk forward: ").lower()
 if start == 'f':
     print("As you walk through the dark maze, you see all kinda of creatures on the walls and in the shadows.")
     print("Suddenly, you run into a monster!")
-    Monster.generate_monster
-    for i in Monster:
-        print()
-    Hero.attack_monster
-    print("Monster gets provoked and attacks back!")
-    Monster.attack
 
-
-
-
-
-
-
-    
+# generate a monster

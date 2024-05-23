@@ -78,6 +78,3 @@ class Monster():
 
     def __str__(self):
         return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
-  
-
-
