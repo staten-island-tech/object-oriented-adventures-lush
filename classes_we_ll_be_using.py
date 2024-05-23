@@ -15,7 +15,7 @@ class Merchant():
         info.xp = xp
         
     def trade(info, ask_trade, trader_ans):
-        ask_trade = input("Would you like to trade in your weapon for an upgraded weapon? Y/N: ").upper()
+        ask_trade = input("Would you like to trade in your weapon for an upgraded weapon, {Hero.self.name}, ?").upper()
         while ask_trade == 'Y':
             trader_ans = random.randint(1,3)
             if trader_ans == 1:
@@ -65,7 +65,7 @@ class Monster():
 
     def generate_monster():
         while True:
-            random_monster = random.choice(data)
+            random_monster = random.choice(data[0])
             print(f"{Monster.self.name} has appeared!")
 
     def attack(self, player):
