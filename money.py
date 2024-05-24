@@ -6,4 +6,4 @@ if spend_money == "Y":
     input("would you like to trade wit merchant to gain xp y/n?").upper()
 else: 
     print("you can now proceed with your game ")
-    merchant(self, ask_trade, trader_ans, experience ,  health_points):
+    
