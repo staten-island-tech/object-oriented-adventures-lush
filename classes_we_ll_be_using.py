@@ -7,7 +7,6 @@ items = open("./thingys.json", encoding="utf8")
 npcs = open("./npcs.json", encoding="utf8")
 data = (json.load(monsters), json.load(items), json.load(npcs))
 
-
 class Merchant():
     def __init__(self, name):
         self.name = name 
@@ -114,8 +113,10 @@ class Inventory():
         choice = input("Would you like to buy this item? Y or N")
         if choice == "Y":
             inventory.append(item)
+        elif choice == "N":
+            print("Purchase declined")
             
     def sell_item():
         choice = input("Would you like to sell this item? Y or N")
-        if choice == "N":
+        if choice == "Y":
             inventory.remove(item)

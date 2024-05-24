@@ -13,6 +13,8 @@ if start == 'f':
     print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
     print("Suddenly, you run into a monster!")
 
+##Variable representing random_monster
+    
 with open('monsert.json') as f:
     Monsters = json.load(f)
     random_monster = random.choice(Monsters)
@@ -23,9 +25,9 @@ print(f"Attack: {random_monster['atk']}")
 print(f"Drops: {', '.join(random_monster['drops'])}")
 print(f"Description: {random_monster['description']}")
 
-def attack():
+def provoke():
     provoke = input("enter a to attack: ").lower()
     if provoke == 'a':
         Hero.attack_monster()
 
-# generate a monster
+#use varible inside this function
