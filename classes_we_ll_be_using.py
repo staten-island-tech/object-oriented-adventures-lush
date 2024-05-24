@@ -13,7 +13,7 @@ class Merchant():
     def __init__(self, name):
         self.name = name
 
-    def trade(info, ask_trade, trader_ans, Hero):
+    def trade(ask_trade, trader_ans, Hero):
         ask_trade = input("Would you like to trade in your weapon for an upgraded weapon, {Hero.self.name}, ?").upper()
         while ask_trade == 'Y':
             trader_ans = random.randint(1,3)
@@ -49,8 +49,9 @@ class Hero:
 
     def win(self, monster):
         if monster.health <= 0:
-            level = level + 1
+            xp = xp+50
             print("You won the challenge!")
+            print("+50 XP")
 
     def lose(self):
         if self.health <= 0:
@@ -63,11 +64,6 @@ class Monster():
         self.attack_power=attack_power
         self.drops=drops # this is what sort of items they drop, be it food or weapons
         self.description = description
-
-    def generate_monster():
-        while True:
-            random_monster = random.choice(data[0])
-            print(f"{Monster.self.name} has appeared!")
 
     def attack(self, player):
         player.health -= self.attack_power

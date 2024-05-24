@@ -1,7 +1,6 @@
 import json
 import random
-from classes_we_ll_be_using import Monster
-from classes_we_ll_be_using import Hero
+from classes_we_ll_be_using import *
 
 
 print("As the shadows fade and the hero is faced with the challenge ahead of them...")
@@ -24,8 +23,9 @@ print(f"Attack: {random_monster['atk']}")
 print(f"Drops: {', '.join(random_monster['drops'])}")
 print(f"Description: {random_monster['description']}")
 
-attack = input("enter a to attack: ").lower()
-if attack == 'a':
-    Hero.attack_monster()
+def attack():
+    provoke = input("enter a to attack: ").lower()
+    if provoke == 'a':
+        Hero.attack_monster()
 
 # generate a monster
