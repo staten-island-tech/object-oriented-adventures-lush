@@ -4,7 +4,6 @@ monsters = open("./monsert.json", encoding="utf8")
 items = open("./thingys.json", encoding="utf8")
 npcs = open("./npcs.json", encoding="utf8")
 data = (json.load(monsters), json.load(items), json.load(npcs))
-print("You encountered a merchant!")
 
 
 
@@ -12,6 +11,7 @@ class Merchant():
     def __init__(self, name):
        self.name = name    
     def trade(self, Hero):
+        print("You encountered a merchant!")
         ask_trade = input("Would you like to trade in your weapon for an upgraded weapon, {Hero.self.name}, ?").upper()
         while ask_trade == 'Y':
             trader_ans = random.randint(1,3)
