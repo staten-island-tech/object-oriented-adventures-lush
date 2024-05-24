@@ -10,7 +10,7 @@ print("As you look at what you have in your bindle, you realize you came here un
 
 start = input("To start, press F to walk forward: ").lower()
 if start == 'f':
-    print("As you walk through the dark maze, you see all kinda of creatures on the walls and in the shadows.")
+    print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
     print("Suddenly, you run into a monster!")
 
 with open('monsert.json') as f:

@@ -1,8 +1,6 @@
 import json
 import os
-from classes_we_ll_be_using import Items
-
-inventory = []
+from classes_we_ll_be_using import *
 
 #WEAPONS!!!
 Small_dagger = Items.Weapons("Small dagger", 20, "Weapon", "The very thing you begin your journey with.")
