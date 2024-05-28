@@ -1,0 +1,51 @@
+[    
+    {
+    "name": "Fally",
+    "hp": 600,
+    "atk": 20,
+    "drops": [
+        "Fear of Falling",
+        "Ink sword"
+    ],
+    "description": "??????????"
+},
+{
+    "name": "SwiftBot",
+    "hp": 750,
+    "atk": 250,
+    "drops": [
+        "Robot Sword"
+    ],
+    "description": "Trauma incarnate."
+},
+{
+    "name": "MalakBot",
+    "hp": 1000,
+    "atk": 300,
+    "drops": [
+        "Garden shears"
+    ],
+    "description": "The final boss. Is singlehandedly responsible for dropping HOS and GPAs."
+},
+{
+    "name": "Arachnia",
+    "hp": 999,
+    "atk": 500,
+    "drops": [
+        "Arachnophobia",
+        "Claustrophobia",
+        "Spider eyes",
+        "Web sword"
+    ],
+    "description": "????????????????????????"
+},
+{
+    "name": "The maze",
+    "hp": 4000,
+    "atk": 0,
+    "drops": [
+        "Trophy of victory"
+    ],
+    "description": "Yeah. C'mon. What are you waiting for?"
+}
+]

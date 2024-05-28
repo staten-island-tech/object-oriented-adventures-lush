@@ -1,13 +1,13 @@
 [
     {
         "name": "Small dagger",
-        "atk": 20,
+        "atk": 40,
         "type": "Weapon",
         "description": "The very thing you begin your journey with."
     },
     {
         "name": "Big (gender) dagger",
-        "atk": 40,
+        "atk": 50,
         "type": "Weapon",
         "description": "An upgrade! Not that impressive, but still progress."
     },
@@ -19,7 +19,7 @@
     },
     {
         "name": "Big sword",
-        "atk": 50,
+        "atk": 70,
         "type": "Weapon",
         "description": "Yeah, well...what were you expecting? Slightly stronger than the big gender dagger."
     },

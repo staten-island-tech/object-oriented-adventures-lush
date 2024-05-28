@@ -10,9 +10,9 @@ data = (json.load(monsters), json.load(items), json.load(npcs))
 class Merchant():
     def __init__(self, name):
         self.name = name 
-    def trade(self, Hero):
+    def trade():
         print("You encountered a merchant!")
-        ask_trade = input("Would you like to trade in your weapon for an upgraded weapon, {Hero.self.name}, ?").upper()
+        ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "?").upper()
         while ask_trade == 'Y':
             trader_ans = random.randint(1,3)
             if trader_ans == 1:
@@ -27,6 +27,8 @@ class Merchant():
                 print('Trader declined :(')
                 break
 class Hero:
+    name = input("What is your name? ")
+
     def __init__(self, name, level, attack_power, health, xp):
         self.name = name
         self.xp = xp
