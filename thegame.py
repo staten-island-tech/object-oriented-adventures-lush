@@ -13,16 +13,56 @@ print("As the shadows fade and the hero is faced with the challenge ahead of the
 print("Welcome to the maze of life, " + Hero.name + ".")
 print("As you look at what you have in your bindle, you realize you came here unprepared. Let's start with a tutorial.", "go to README.md for instructions")
 
-start = input("To start, press F to walk forward: ").lower()
-if start == 'f':
-    print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
-    print("Suddenly, you run into a monster!")
 
 ##Variable representing random_monster
-    
+def encounter(): 
+    start = input("To start, press F to walk forward: ").lower()
+    if start == 'f':
+        print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
+        print("Suddenly, you run into a monster!")
+    with open('monsert.json') as f:
+        Monsters = json.load(f)
+        random_monster = random.choice(Monsters)
+
+    print("You encountered a " + random_monster['name'] + "!")
+    print(f"HP: {random_monster['hp']}")
+    print(f"Attack: {random_monster['atk']}")
+    print(f"Drops: {', '.join(random_monster['drops'])}")
+    print(f"Description: {random_monster['description']}")
+
+    def battle_menu():
+    print("Battle Menu:")
+    print("1. attack")
+    print("2. taunt")
+    print("3. run")
+    move = input("Choose your move: ")	
+    if move == '1':
+        Hero.attack_monster(random_monster)
+    elif move == '2':
+        Hero.taunt(random_monster)
+    else:
+        print("You run away from the monster")
+
+#use varible inside this function
+        
+
+
+##Add to hero class#
+
+def taunt(self, random_monster):
+    taunt = input('taunt: ')
+    print(self.name + ' taunts ' + random_monster.name)
+    response  = random.randint(1,3)
+    if response == 1:
+        print("random_monster.name + “ gets angry and attacks")
+
+
+#Generate a random monster and print its data:
 with open('monsert.json') as f:
-    Monsters = json.load(f)
-    random_monster = random.choice(Monsters)
+	Monsters = json.load(f)
+
+random_monster = random.choice('monsert.json')
+
 
 print("You encountered a " + random_monster['name'] + "!")
 print(f"HP: {random_monster['hp']}")
@@ -30,14 +70,31 @@ print(f"Attack: {random_monster['atk']}")
 print(f"Drops: {', '.join(random_monster['drops'])}")
 print(f"Description: {random_monster['description']}")
 
+def main_menu():
+	print("Game Menu: ")
+	print("1. Explore the maze")
+	print ("2. View Inventory")
+	print("3. Visit Merchant")
+	choice = input("What would you like to do? ")
+    if choice == '1':
+	#		explore_maze()
+	elif choice == '2':
+		#print inventory data
+	else:
+		#visit_merchant()
 
-def provoke():
-    provoke = input("enter a to attack: ").lower()
-    if provoke == 'a':
-        Hero.attack_monster(Hero.self, Monster.self)
 
-provoke()
 
-#use varible inside this function
-        
-Merchant.trade()
+
+def explore_maze():
+	print("You navigate the dim maze, feeling your way through the cold, stone walls.") 
+    print("The torches on the walls cast scary shadows over you, as you try to figure out the twisting paths of the labyrinthe . . .")
+def encounter():
+    encounter = random.randint(1,3)
+    if encounter == 1:
+            #put previous battle code inside of a function, and indicate here
+    elif encounter == 2:
+            #NPC encounter
+    else:
+            #you fall into a hole
+
