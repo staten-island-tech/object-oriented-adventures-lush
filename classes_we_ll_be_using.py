@@ -26,6 +26,7 @@ class Merchant():
                 trader_ans == 'No'
                 print('Trader declined :(')
                 break
+
 class Hero:
     name = input("What is your name? ")
 
@@ -38,6 +39,10 @@ class Hero:
     
     def taunt(self, random_monster):
         taunt = input("You say to the monster, ")
+        print(self.name + ' taunts ' + random_monster.name)
+        response  = random.randint(1,3)
+        if response == 1:
+            print(random_monster.name + ' gets angry and attacks')
 
     def level_up(level, health, attack_power, xp):
         if xp == {200, 400, 800, 1000}:
@@ -66,12 +71,6 @@ class Monster():
         self.attack_power=attack_power
         self.drops=drops # this is what sort of items they drop, be it food or weapons
         self.description = description
-
-    def generate_monster():
-        while True:
-            random_monster = random.choice(data[0]['name'])
-            print(random_monster , "has appeared!")
-
 
     def attack(self, player):
         player.health -= self.attack_power
