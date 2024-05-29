@@ -34,7 +34,8 @@ print(f"Description: {random_monster['description']}")
 def provoke():
     provoke = input("enter a to attack: ").lower()
     if provoke == 'a':
-        Hero.attack_monster(Hero.self, Monster.self)
+        Hero.attack_monster(Hero
+                            .self, Monster.self)
 
 provoke()
 
