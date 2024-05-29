@@ -30,7 +30,7 @@
         "description": "Little boy."
     },
     {
-        "name": "Wide_boy",
+        "name": "Wide boy",
         "hp": 250,
         "atk": 20,
         "drops": [
