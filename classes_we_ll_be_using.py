@@ -35,6 +35,9 @@ class Hero:
         self.level = level
         self.attack_power = attack_power
         self.health = health
+    
+    def taunt(self, random_monster):
+        taunt = input("You say to the monster, ")
 
     def level_up(level, health, attack_power, xp):
         if xp == {200, 400, 800, 1000}:
