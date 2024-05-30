@@ -2,30 +2,100 @@ import random
 import json
 import json
 import random
-monsters = open("./monsert.json", encoding="utf8")
 items = open("./thingys.json", encoding="utf8")
 npcs = open("./npcs.json", encoding="utf8")
 data = (json.load(monsters), json.load(items), json.load(npcs))
 
-class Merchant():
-    def __init__(self, name):
-        self.name = name 
-    def trade():
-        print("You encountered a merchant!")
-        ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "?").upper()
-        while ask_trade == 'Y':
-            trader_ans = random.randint(1,3)
-            if trader_ans == 1:
-                trader_ans == 'Yes'
-                Hero.xp += 50
-                print("+50 XP")
-                Hero.health += 50
-                print("+50 Health Points")
-                print('The trader accepts the offer!')
-            else:
-                trader_ans == 'No'
-                print('Trader declined :(')
-                break
+class Encounter():
+
+
+    class Merchant():
+        def __init__(self, name):
+            self.name = name 
+        def trade():
+            print("You encountered a merchant!")
+            ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "?").upper()
+            while ask_trade == 'Y':
+                trader_ans = random.randint(1,3)
+                if trader_ans == 1:
+                    trader_ans == 'Yes'
+                    Hero.xp += 50
+                    print("+50 XP")
+                    Hero.health += 50
+                    print("+50 Health Points")
+                    print('The trader accepts the offer!')
+                else:
+                    trader_ans == 'No'
+                    print('Trader declined :(')
+                    break
+
+    class Monster():
+        def __init__(self, name:str, hp:int, attack_power:int, drops:list, description:str):
+            self.name=name
+            self.hp=hp
+            self.attack_power=attack_power
+            self.drops=drops # this is what sort of items they drop, be it food or weapons
+            self.description = description
+
+        class generate_mons():
+            def random_monster_gen():
+                with open('monsert.json') as f:
+                    Monsters = json.load(f)
+                    random_monster = random.choice(Monsters)
+                print("You encountered a " + random_monster['name'] + "!")
+                print(f"HP: {random_monster['hp']}")
+                print(f"Attack: {random_monster['atk']}")
+                print(f"Drops: {', '.join(random_monster['drops'])}")
+                print(f"Description: {random_monster['description']}")
+
+                def battle_menu():
+                    print("Battle Menu:")
+                    print("1. attack")
+                    print("2. taunt")
+                    print("3. run")
+                    move = input("Choose your move: ")	
+                    if move == '1':
+                        Hero.attack_monster(random_monster)
+                    elif move == '2':
+                        Hero.taunt(random_monster)
+                    else:
+                        print("You run away from the monster")     
+
+
+        def attack(self, player):
+            player.health -= self.attack_power
+            print(f"{self.name} attacks {player.name} for {self.attack_power} damage!")
+
+        def __str__(self):
+            return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
+        
+    class NPCs():
+        def __init__(self, name, description) -> None:
+            self.name = name
+            self.description = description
+        def __str__(self):
+            return f"{self.name}, {self.description}"
+        def random_npc():
+            with open('npcs.json') as f:
+                NPCs = json.load(f)
+                random_NPCs = random.choice(NPCs)
+            print("You encountered a " + random_NPCs['name'] + "!")
+            print(f"HP: {random_NPCs['hp']}")
+            print(f"Attack: {random_NPCs['atk']}")
+            print(f"Drops: {', '.join(random_NPCs['drops'])}")
+            print(f"Description: {random_NPCs['description']}")
+        
+
+
+    def generate_opp():       
+        encounter = random.randint(1,3)
+        if encounter == 1:
+                #put previous battle code inside of a function, and indicate here
+        elif encounter == 2:
+                #NPC encounter
+        else:
+                #you fall into a hole
+            
 
 class Hero:
     name = input("What is your name? ")
@@ -64,27 +134,7 @@ class Hero:
         if self.health <= 0:
             print("Game Over")
 
-class Monster():
-    def __init__(self, name:str, hp:int, attack_power:int, drops:list, description:str):
-        self.name=name
-        self.hp=hp
-        self.attack_power=attack_power
-        self.drops=drops # this is what sort of items they drop, be it food or weapons
-        self.description = description
 
-    def attack(self, player):
-        player.health -= self.attack_power
-        print(f"{self.name} attacks {player.name} for {self.attack_power} damage!")
-
-    def __str__(self):
-        return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
-    
-class NPCs():
-    def __init__(self, name, description) -> None:
-        self.name = name
-        self.description = description
-    def __str__(self):
-        return f"{self.name}, {self.description}"
 item = ""
 class Items():
     class Weapons():
@@ -124,3 +174,6 @@ class Inventory():
         choice = input("Would you like to sell this item? Y or N")
         if choice == "Y":
             inventory.remove(item)
+    
+    def view(item):
+        

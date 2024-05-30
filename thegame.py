@@ -21,9 +21,9 @@ if view_menu == 'm':
         print("3. Visit Merchant")
         choice = input("What would you like to do? ")
         if choice == '1':
-        #		explore_maze()
+            explore()
         elif choice == '2':
-            #print inventory data
+            print(inventory)
         else:
             #visit_merchant()
 
@@ -36,62 +36,17 @@ def explore():
         enc = random.randint(1,3)
         if enc == 1:
                 #put previous battle code inside of a function, and indicate here
+            open_battle_menu = input("To open the battle menu, press B").lower()     
+            if open_battle_menu == "B":
+                Encounter.Monster.generate_mons.battle_menu()
+
         elif enc == 2:
                 #NPC encounter
         else:
                 #you fall into a hole
         
-def encounter_monster():
-    encounter = random.randint(1,3)
-    if encounter == 1:
-            #put previous battle code inside of a function, and indicate here
-    elif encounter == 2:
-            #NPC encounter
-    else:
-            #you fall into a hole
-
-    with open('monsert.json') as f:
-        Monsters = json.load(f)
-        random_monster = random.choice(Monsters)
-
-    print("You encountered a " + random_monster['name'] + "!")
-    print(f"HP: {random_monster['hp']}")
-    print(f"Attack: {random_monster['atk']}")
-    print(f"Drops: {', '.join(random_monster['drops'])}")
-    print(f"Description: {random_monster['description']}")
-
-    def battle_menu():
-    print("Battle Menu:")
-    print("1. attack")
-    print("2. taunt")
-    print("3. run")
-    move = input("Choose your move: ")	
-    if move == '1':
-        Hero.attack_monster(random_monster)
-    elif move == '2':
-        Hero.taunt(random_monster)
-    else:
-        print("You run away from the monster")
 
 
- 
-#use varible inside this function
-        
 
 
-##Add to hero class#
-
-
-#Generate a random monster and print its data:
-with open('monsert.json') as f:
-	Monsters = json.load(f)
-
-random_monster = random.choice('monsert.json')
-
-
-print("You encountered a " + random_monster['name'] + "!")
-print(f"HP: {random_monster['hp']}")
-print(f"Attack: {random_monster['atk']}")
-print(f"Drops: {', '.join(random_monster['drops'])}")
-print(f"Description: {random_monster['description']}")
 
