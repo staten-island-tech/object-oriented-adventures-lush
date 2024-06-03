@@ -2,9 +2,15 @@ import random
 import json
 import json
 import random
+monsters = open("./monsert.json", encoding="utf8")
 items = open("./thingys.json", encoding="utf8")
 npcs = open("./npcs.json", encoding="utf8")
 data = (json.load(monsters), json.load(items), json.load(npcs))
+
+def explore():
+    walk = input("Press F to walk forward.").lower()
+    if walk == 'f':
+        Encounter.generate_opp()
 
 class Encounter():
 
@@ -24,6 +30,7 @@ class Encounter():
                     Hero.health += 50
                     print("+50 Health Points")
                     print('The trader accepts the offer!')
+                    break
                 else:
                     trader_ans == 'No'
                     print('Trader declined :(')
@@ -84,17 +91,28 @@ class Encounter():
             print(f"Attack: {random_NPCs['atk']}")
             print(f"Drops: {', '.join(random_NPCs['drops'])}")
             print(f"Description: {random_NPCs['description']}")
+            print("'" + input(("just make them what you want them to say ;)")) + "'")
+            print("             Ok              Bye")
+
+        
         
 
 
     def generate_opp():       
         encounter = random.randint(1,3)
         if encounter == 1:
+            Encounter.Monster.generate_mons()
                 #put previous battle code inside of a function, and indicate here
+            open_battle_menu = input("To open the battle menu, press B").lower()     
+            if open_battle_menu == "b":
+                Encounter.Monster.generate_mons.battle_menu()
         elif encounter == 2:
                 #NPC encounter
-        else:
+            Encounter.NPCs.random_npc()
+        elif encounter == 3:
                 #you fall into a hole
+            print("womp womp")
+            print("That's unlucky. I'll help you out!")
             
 
 class Hero:
@@ -106,13 +124,18 @@ class Hero:
         self.level = level
         self.attack_power = attack_power
         self.health = health
-    
+    def __str__(self):
+        return f"{self.name}, {self.xp}, {self.level}, {self.attack_power}, {self.health}"
     def taunt(self, random_monster):
         taunt = input("You say to the monster, ")
         print(self.name + ' taunts ' + random_monster.name)
         response  = random.randint(1,3)
         if response == 1:
             print(random_monster.name + ' gets angry and attacks')
+        elif response == 2:
+            print(random_monster.name + ' cries and runs away...?')
+        else:
+            print("Wow. You really thought that was gonna work?")
 
     def level_up(level, health, attack_power, xp):
         if xp == {200, 400, 800, 1000}:
@@ -175,5 +198,20 @@ class Inventory():
         if choice == "Y":
             inventory.remove(item)
     
-    def view(item):
-        
+    def view():
+        choice = input("Choose an item to view information.")
+        if choice == items['name'] & items['type'] == "Weapon":
+            print(f"{choice['name']}")
+            print(f"Attack: {choice['atk']}")
+            print(f"Type: {choice['type']}")
+            print(f"Description: {choice['description']}")
+        elif choice == items['name'] & items['type'] == "Charm":
+            print(f"{choice['name']}")
+            print(f"Type: {choice['type']}")
+            print(f"Benefits: {choice['benefits']}")
+            print(f"Description: {choice['description']}")              
+        if choice == items['name'] & items['type'] == "Weapon":
+            print(f"{choice['name']}")
+            print(f"HP restored: {choice['hp_restored']}")
+            print(f"Type: {choice['type']}")
+            print(f"Description: {choice['description']}")
