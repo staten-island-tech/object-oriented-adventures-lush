@@ -25,7 +25,7 @@ class Encounter():
                 trader_ans = random.randint(1,3)
                 if trader_ans == 1:
                     trader_ans == 'Yes'
-                    Hero.xp += 50
+                    Hero.self.xp += 50
                     print("+50 XP")
                     Hero.health += 50
                     print("+50 Health Points")
@@ -87,9 +87,6 @@ class Encounter():
                 NPCs = json.load(f)
                 random_NPCs = random.choice(NPCs)
             print("You encountered a " + random_NPCs['name'] + "!")
-            print(f"HP: {random_NPCs['hp']}")
-            print(f"Attack: {random_NPCs['atk']}")
-            print(f"Drops: {', '.join(random_NPCs['drops'])}")
             print(f"Description: {random_NPCs['description']}")
             print("'" + input(("just make them what you want them to say ;)")) + "'")
             print("             Ok              Bye")
