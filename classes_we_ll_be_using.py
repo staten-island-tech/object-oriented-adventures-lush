@@ -88,8 +88,6 @@ class Encounter():
                 random_NPCs = random.choice(NPCs)
             print("You encountered a " + random_NPCs['name'] + "!")
             print(f"Description: {random_NPCs['description']}")
-            print("'" + input(("just make them what you want them to say ;)")) + "'")
-            print("             Ok              Bye")
 
         
         
@@ -99,8 +97,10 @@ class Encounter():
         encounter = random.randint(1,3)
         if encounter == 1:
             Encounter.Monster.generate_mons()
+            print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
+            print("Suddenly, you run into a monster!")
                 #put previous battle code inside of a function, and indicate here
-            open_battle_menu = input("To open the battle menu, press B").lower()     
+            open_battle_menu = input("To open the battle menu, press B ").lower()     
             if open_battle_menu == "b":
                 Encounter.Monster.generate_mons.battle_menu()
         elif encounter == 2:
@@ -108,7 +108,7 @@ class Encounter():
             Encounter.NPCs.random_npc()
         elif encounter == 3:
                 #you fall into a hole
-            print("womp womp")
+            print("womp womp. You fell into a hole!")
             print("That's unlucky. I'll help you out!")
             
 
