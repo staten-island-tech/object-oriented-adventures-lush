@@ -6,7 +6,7 @@ from typeslow import *
 
 monologue = "in this game you will be fighting the most dangerous monsters. your goal is to complete the maze and defeat the monster and attack him using weapons. throughout the game you will have multiple enconters with the merchant. you, as the hero, will be able to gain xp through trade with the merchant. if you answer yes to trading with the merchant you will automatically be given 100 xp. for extra instruction and more information, replay the game. As the shadows fade and the hero is faced with the challenge ahead of them... Welcome to the maze of life, " + Hero.name + ". As you look at what you have in your bindle, you realize you came here unprepared. Let's start with a tutorial. go to README.md for instructions"
 
-print_s(monologue)
+#print_s(monologue)
 
 def explore():
     start = input("To start, press F to walk forward: ").lower()

@@ -55,18 +55,18 @@ class Encounter():
                 print(f"Drops: {', '.join(random_monster['drops'])}")
                 print(f"Description: {random_monster['description']}")
 
-                def battle_menu():
-                    print("Battle Menu:")
-                    print("1. attack")
-                    print("2. taunt")
-                    print("3. run")
-                    move = input("Choose your move: ")	
-                    if move == '1':
-                        Hero.attack_monster(random_monster)
-                    elif move == '2':
-                        Hero.taunt(random_monster)
-                    else:
-                        print("You run away from the monster")     
+            def battle_menu():
+                print("Battle Menu:")
+                print("1. attack")
+                print("2. taunt")
+                print("3. run")
+                move = input("Choose your move: ")	
+                if move == '1':
+                    Hero.attack_monster(random_monster)
+                elif move == '2':
+                    Hero.taunt(random_monster)
+                else:
+                    print("You run away from the monster")     
 
 
         def attack(self, player):
@@ -94,11 +94,13 @@ class Encounter():
 
 
     def generate_opp():       
-        encounter = random.randint(1,3)
+        #encounter = random.randint(1,3)
+        encounter = 1
         if encounter == 1:
             Encounter.Monster.generate_mons()
             print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
             print("Suddenly, you run into a monster!")
+            Encounter.Monster.generate_mons.random_monster_gen()
                 #put previous battle code inside of a function, and indicate here
             open_battle_menu = input("To open the battle menu, press B ").lower()     
             if open_battle_menu == "b":
