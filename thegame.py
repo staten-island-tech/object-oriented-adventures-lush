@@ -8,6 +8,7 @@ monologue = "in this game you will be fighting the most dangerous monsters. your
 
 #print_s(monologue)
 
+inventory.append("Small dagger")
 def explore():
     start = input("To start, press F to walk forward: ").lower()
     if start == 'f':
@@ -25,12 +26,14 @@ def main_menu():
         explore()
     elif choice == '2':
         print(inventory)
+        Inventory.view()
     else:
         Encounter.Merchant.trade()
 
 view_menu = input('press m to view the main menu: ').lower()
 if view_menu == 'm':
     main_menu()
+
 ##Variable representing random_monster
 
         
