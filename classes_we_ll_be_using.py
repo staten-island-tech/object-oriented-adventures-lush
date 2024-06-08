@@ -20,6 +20,7 @@ class Encounter():
             self.name = name 
         def trade():
             print("You encountered a merchant!")
+            open(merchant.png)
             ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "?").upper()
             while ask_trade == 'Y':
                 trader_ans = random.randint(1,3)
@@ -95,7 +96,7 @@ class Encounter():
 
     def generate_opp():       
         #encounter = random.randint(1,3)
-        encounter = 1
+        encounter = 2
         if encounter == 1:
             Encounter.Monster.generate_mons()
             print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
