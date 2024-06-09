@@ -1,63 +1,73 @@
 [
     {
         "name": "Small dagger",
-        "atk": 40,
+        "atk": 20,
         "type": "Weapon",
-        "description": "The very thing you begin your journey with."
+        "description": "The very thing you begin your journey with.",
+        "price": 10
     },
     {
         "name": "Big (gender) dagger",
-        "atk": 50,
+        "atk": 40,
         "type": "Weapon",
-        "description": "An upgrade! Not that impressive, but still progress."
+        "description": "An upgrade! Not that impressive, but still progress.",
+        "price": 20
     },
     {
         "name": "Big boy bat",
         "atk": 60,
         "type": "Weapon",
-        "description": "Despite the name, it can be used by anyone."
+        "description": "Despite the name, it can be used by anyone.",
+        "price": 25
     },
     {
         "name": "Big sword",
-        "atk": 70,
+        "atk": 50,
         "type": "Weapon",
-        "description": "Yeah, well...what were you expecting? Slightly stronger than the big gender dagger."
+        "description": "Yeah, well...what were you expecting? Slightly stronger than the big gender dagger.",
+        "price": 30
     },
     {
         "name": "Pixel sword",
         "atk": 80,
         "type": "Weapon",
-        "description": "Ooh, blocky!"
+        "description": "Ooh, blocky!",
+        "price": 40
     },
     {
         "name": "Sparkle sword",
         "atk": 90,
         "type": "Weapon",
-        "description": "Makes me wanna cry..."
+        "description": "Makes me wanna cry...",
+        "price": 50
     },
     {
         "name": "Mime sword",
         "atk": 100,
         "type": "Weapon",
-        "description": "Ceci n'est pas une epee (This is not a sword). (it's invisible, but does a lot of damage anyway.)"
+        "description": "Ceci n'est pas une \u00e9p\u00e9e (This is not a sword). (it's invisible, but does a lot of damage anyway.)",
+        "price": 60
     },
     {
         "name": "Ink sword",
         "atk": 150,
         "type": "Weapon",
-        "description": "Weird thing from a weird guy!"
+        "description": "Weird thing from a weird guy!",
+        "price": 65
     },
     {
         "name": "Robot sword",
         "atk": 200,
         "type": "Weapon",
-        "description": "I stole this from the kits...don't tell!"
+        "description": "I stole this from the kits...don't tell!",
+        "price": 70
     },
     {
         "name": "Garden shears",
         "atk": 99999999,
         "type": "Weapon",
-        "description": "Totally not a reference to one of the most depressing games every made. Can only be used once. It does a lot of damage, but it's still fragile."
+        "description": "Totally not a reference to one of the most depressing games every made. Can only be used once. It does a lot of damage, but it's still fragile.",
+        "price": 99999999999999999999999999
     },
     {
         "name": "Cyclops' eye",
@@ -65,7 +75,8 @@
         "benefits": [
             "Increases ATK by +24"
         ],
-        "description": "You thought something pretty was going to be a charm? Nah."
+        "description": "You thought something pretty was going to be a charm? Nah.",
+        "price": 5
     },
     {
         "name": "Book",
@@ -73,7 +84,8 @@
         "benefits": [
             "Increases HP Limit by +100"
         ],
-        "description": "Wikipedia."
+        "description": "Wikipedia.",
+        "price": 7
     },
     {
         "name": "Big bag of nothing",
@@ -81,7 +93,8 @@
         "benefits": [
             "Nothing sorry"
         ],
-        "description": "HAHAHAHAHA!!! PRANKED!!! - Little boy"
+        "description": "HAHAHAHAHA!!! PRANKED!!! - Little boy",
+        "price": 1
     },
     {
         "name": "Fashion magazine",
@@ -89,17 +102,26 @@
         "benefits": [
             "Increases HP limit by +200"
         ],
-        "description": "Ceci n'e-wait, this IS an authentic French magazine from Chanel! Smell the perfume samples and relax~"
+        "description": "Ceci n'e-wait, this IS an authentic French magazine from Chanel! Smell the perfume samples and relax~",
+        "price": 50
     },
     {
         "name": "Eiffel Tower",
-        "type": "Charm", 
-        "description": "Merci beaucoup."
+        "type": "Charm",
+        "benefits": [
+            "Increases ATK by +77"
+        ],
+        "description": "Merci beaucoup.",
+        "price": 100
     },
     {
         "name": "Fear of falling",
         "type": "Charm",
-        "description": "Ok, I know it's not something pleasant to fit what it is, BUT-*thud*"
+        "benefits": [
+            "Increases ATK by +200"
+        ],
+        "description": "Ok, I know it's not something pleasant to fit what it is, BUT-*thud*",
+        "price": 99999999999999999999999999
     },
     {
         "name": "Arachnophobia",
@@ -107,7 +129,8 @@
         "benefits": [
             "Bragging rights"
         ],
-        "description": "The feeling of conquering your fears. Literally."
+        "description": "The feeling of conquering your fears. Literally.",
+        "price": 99999999999999999999999999
     },
     {
         "name": "Claustrophobia",
@@ -115,7 +138,8 @@
         "benefits": [
             "FEAR."
         ],
-        "description": "Ok, I know it came from the spider but it's just for dramatic effect. You're in a maze, right? It makes sense."
+        "description": "Ok, I know it came from the spider but it's just for dramatic effect. You're in a maze, right? It makes sense.",
+        "price": 99999999999999999999999999
     },
     {
         "name": "Spider eyes",
@@ -123,42 +147,49 @@
         "benefits": [
             "Disgust"
         ],
-        "description": "Okay, ew."
+        "description": "Okay, ew.",
+        "price": 99999999999999999999999999
     },
     {
         "name": "Apple",
         "hp_restored": 30,
         "type": "Food",
-        "description": "The staple of restoration."
+        "description": "The staple of restoration.",
+        "price": 2
     },
     {
         "name": "Croissant",
         "hp_restored": 50,
         "type": "Food",
-        "description": "Cute, but also a fun treat."
+        "description": "Cute, but also a fun treat.",
+        "price": 4
     },
     {
         "name": "Baguette",
         "hp_restored": 100,
         "type": "Food",
-        "description": "Long boy."
+        "description": "Long boy.",
+        "price": 5
     },
     {
         "name": "Crepes",
         "hp_restored": 120,
         "type": "Food",
-        "description": "Soft and fluffy."
+        "description": "Soft and fluffy.",
+        "price": 6
     },
     {
         "name": "Choux",
         "hp_restored": 115,
         "type": "Food",
-        "description": "The staple of restoration."
+        "description": "The staple of restoration.",
+        "price": 8
     },
     {
         "name": "Macaron",
         "hp_restored": 75,
         "type": "Food",
-        "description": "I'm sorry most of the food is French, but it has to be for now."
+        "description": "I'm sorry most of the food is French, but it has to be for now.",
+        "price": 10
     }
 ]
