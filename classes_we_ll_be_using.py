@@ -1,11 +1,15 @@
 import random
+import os
 import json
 import json
 import random
 monsters = open("./monsert.json", encoding="utf8")
 items = open("./thingys.json", encoding="utf8")
 npcs = open("./npcs.json", encoding="utf8")
-data = (json.load(monsters), json.load(items), json.load(npcs))
+data_monsters = (json.load(monsters))
+data_items = (json.load(items))
+data_npcs = (json.load(npcs))
+
 
 def explore():
     walk = input("Press F to walk forward.").lower()
@@ -20,7 +24,8 @@ class Encounter():
             self.name = name 
         def trade():
             print("You encountered a merchant!")
-            ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "?").upper()
+            open('merchant.png')
+            ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "? Y or N ").upper()
             while ask_trade == 'Y':
                 trader_ans = random.randint(1,3)
                 if trader_ans == 1:
@@ -35,6 +40,67 @@ class Encounter():
                     trader_ans == 'No'
                     print('Trader declined :(')
                     break
+            if ask_trade != 'Y':
+                print("Yeah, are you sure?")
+            
+        class Merchant_shop:
+            def __init__(self, name, inventory):
+                self.name = name
+                self.inventory = [ ]
+                self.inventory_items = [
+                {"name": f"{data_items['name']}", "type": f"{data_items['type']}", "price": 0+{data_items['price']}}
+                ]
+                #fill in all the items in json item file
+            def __str__(self):
+                return f"{self.name}, {self.inventory}, {self.inventory_items}"
+            def sell_item(item):
+                item_forsale = input("Which item would you like to sell: ")
+                for item in Hero.inventory:
+                    print(f"{item['name']} - {item['price']}")
+                    if item_forsale == item['name']:
+                        Hero.xp = Hero.xp + 20
+                        Hero.money = Hero.money + item['price']
+                        print(f"Merchant bought {item['name']} for ${item['price']}. +20 XP! Current XP: {Hero.xp}. Current balance: {Hero.money}")
+                        return
+
+            def buy_item(item):
+                for item in self.inventory:
+                    print(f"{item['name']} - {item['price']}")
+                    buy = input("Which item would you like you buy?:")
+                for item in self.inventory:
+                    if buy == {item['name']}:
+                        item.append(Hero.inventory)
+                        Hero.money = Hero.money - {item['price']}
+                        return Hero.money
+                        print(f"You bought the {item[name]} for {item[price]}. Current balance: {Hero.money}")
+                        return
+                        
+
+            def trade_item(item):
+                for item in Hero.inventory:
+                    print(f"{item['name']} - {item['price']}")
+                    hero_item = input("Which item would you like you trade?")
+                    if hero_item == {item.name}:
+                        merchant_items = [ ]
+                for merchant_item in self.inventory_items:
+                    if abs(item["price"] - merchant_item["price"]) < 10:
+                        merchant_items.append(merchant_item)
+                        print("Items available for trade:")
+                for i, item in enumerate(merchant_items, start=1):
+                        print(f"{i}. {item['name']} - {item['price']}")
+                        choice_item = input("Which item would you like to trade? Or press q to quit trade:  ")
+                        if choice_item.lower() == 'q':
+                                print("Quit trade.")
+                                return
+                        else:
+                            traded_item = merchant_items[choice_item - 1]
+                            self.inventory.append(traded_item)
+                            self.inventory.append(item)
+                            Hero.xp = Hero.xp + 20
+                            print(f"Traded {item['name']} for {traded_item['name']}. +20 XP!")
+                            return
+
+
 
     class Monster():
         def __init__(self, name:str, hp:int, attack_power:int, drops:list, description:str):
@@ -55,23 +121,42 @@ class Encounter():
                 print(f"Drops: {', '.join(random_monster['drops'])}")
                 print(f"Description: {random_monster['description']}")
 
-                def battle_menu():
+            def battle_sequence():
+                while True:
                     print("Battle Menu:")
-                    print("1. attack")
-                    print("2. taunt")
-                    print("3. run")
-                    move = input("Choose your move: ")	
-                    if move == '1':
-                        Hero.attack_monster(random_monster)
-                    elif move == '2':
-                        Hero.taunt(random_monster)
+                    print("1. Attack")
+                    print("2. Taunt")
+                    print("3. Run")
+                    choice = input("Choose your move: ")
+
+                    if choice == "1":
+                        Hero.attack_monster(Hero.name, Monster.name)
+                    elif choice == "2":
+                        Hero.taunt(Hero.name, Encounter.Monster.name)
+                    elif choice == "3":
+                        return
                     else:
-                        print("You run away from the monster")     
+                        print("Invalid choice. Please choose a valid option.")
+                    if Monster.hp <= 0:
+                        print("You won! You earned 50 XP! Check your inventory for more items ;)")
+                        inventory.append(random_monster['drops'])
+                    if Hero.health <= 0:
+                        print("You died. Game over.")
+                        break
 
 
         def attack(self, player):
-            player.health -= self.attack_power
-            print(f"{self.name} attacks {player.name} for {self.attack_power} damage!")
+            dodge_chance = random.randint(1,64)
+            if dodge_chance != 1:
+                player.health -= self.attack_power
+                print(f"{self.name} attacks {player.name} for {self.atk} damage!")
+            elif dodge_chance == 1:
+                print(f"{self.name} attacks {player.name}, but {player.name} dodged the attack!")
+            Encounter.Monster.generate_mons.battle_sequence()
+        
+        def take_damage(self, player_attack):
+            self.health -= player_attack
+            print(f"{player.name} attacks {self.name} for {player_attack} damage!")
 
         def __str__(self):
             return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
@@ -94,16 +179,12 @@ class Encounter():
 
 
     def generate_opp():       
-        #encounter = random.randint(1,3)
-        encounter = 1
+        encounter = random.randint(1,3)
         if encounter == 1:
             print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
             print("Suddenly, you run into a monster!")
             Encounter.Monster.generate_mons.random_monster_gen()
-                #put previous battle code inside of a function, and indicate here
-            open_battle_menu = input("To open the battle menu, press B ").lower()     
-            if open_battle_menu == "b":
-                Encounter.Monster.generate_mons.battle_menu()
+            Encounter.Monster.generate_mons.battle_sequence()
         elif encounter == 2:
                 #NPC encounter
             Encounter.NPCs.random_npc()
@@ -134,6 +215,9 @@ class Hero:
             print(random_monster.name + ' cries and runs away...?')
         else:
             print("Wow. You really thought that was gonna work?")
+        Encounter.Monster.attack()
+        Encounter.Monster.generate_mons.battle_sequence()
+
 
     def level_up(level, health, attack_power, xp):
         if xp == {200, 400, 800, 1000}:
@@ -142,8 +226,14 @@ class Hero:
             attack_power += 50
 
     def attack_monster(self, monster):
+        dodge_chance = random.randint(1,64)
+        if dodge_chance != 1:
             monster.health -= self.attack_power
             print(f"{self.name} attacks {monster.name} for {self.attack_power} damage!")
+        elif dodge_chance == 1:
+            print(f"{self.name} attacks {monster.name}, but {monster.name} dodged the attack!")
+        Encounter.Monster.attack()
+        Encounter.Monster.generate_mons.battle_sequence()
 
     def win(self, monster):
         if monster.health <= 0:
@@ -159,29 +249,32 @@ class Hero:
 item = ""
 class Items():
     class Weapons():
-        def __init__(self,name:str,atk:int,type:str,description:str) -> None:
+        def __init__(self,name:str,atk:int,type:str,description:str,price:int) -> None:
             self.name = name
             self.atk = atk
             self.type = type
             self.description = description
+            self.price = price
         def __str__(self):
-            return f"{self.name}, {self.atk}, {self.type}, {self.description}"
+            return f"{self.name}, {self.atk}, {self.type}, {self.description}, {self.price}"
     class Charms():
-        def __init__(self,name:str,type:str,benefits:list,description:str) -> None:
+        def __init__(self,name:str,type:str,benefits:list,description:str,price:int) -> None:
             self.name = name
             self.type = type
             self.benefits = benefits
             self.description = description
+            self.price = price
         def __str__(self):
-            return f"{self.name}, {self.type}, {self.benefits}, {self.description}"
+            return f"{self.name}, {self.type}, {self.benefits}, {self.description}, {self.price}"
     class Food():
-        def __init__(self,name:str,hp_restored:int,type:str,description:str) -> None:
+        def __init__(self,name:str,hp_restored:int,type:str,description:str,price:int) -> None:
             self.name = name
             self.hp_restored = hp_restored
             self.type = type
             self.description = description
+            self.price = price
         def __str__(self):
-            return f"{self.name}, {self.hp_restored}, {self.type}, {self.description}"
+            return f"{self.name}, {self.hp_restored}, {self.type}, {self.description}, {self.price}"
 inventory = []
 class Inventory():
     def add_item():
@@ -197,18 +290,18 @@ class Inventory():
             inventory.remove(item)
     
     def view():
-        choice = input("Choose an item to view information: ")[0].upper()
-        if choice == items['name'] & items['type'] == "Weapon":
+        choice = input("Choose an item to view information.")
+        if choice == data_items['name'] & data_items['type'] == "Weapon":
             print(f"{choice['name']}")
             print(f"Attack: {choice['atk']}")
             print(f"Type: {choice['type']}")
             print(f"Description: {choice['description']}")
-        elif choice == items['name'] & items['type'] == "Charm":
+        elif choice == data_items['name'] & data_items['type'] == "Charm":
             print(f"{choice['name']}")
             print(f"Type: {choice['type']}")
             print(f"Benefits: {choice['benefits']}")
             print(f"Description: {choice['description']}")              
-        if choice == items['name'] & items['type'] == "Weapon":
+        if choice == data_items['name'] & data_items['type'] == "Weapon":
             print(f"{choice['name']}")
             print(f"HP restored: {choice['hp_restored']}")
             print(f"Type: {choice['type']}")
