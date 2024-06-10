@@ -13,28 +13,6 @@ def explore():
     if start == 'f':
         Encounter.generate_opp()
 
-def shop_menu(self, player, inventory, prices):
-	while True:
-        print(f“Welcome to {merchant_shop.name}”)
-        print(“Available items: “)
-        for item in inventory:
-            print(f”{item.name}: {prices[item]}”)
-            print(“Shop Menu: “)
-            print(“1. Buy an item” )
-            print(2. Sell an item”)
-            print(“3. Trade an item”)
-            print(“4. Return to main menu”)
-
-        Deal = input(“What would you like to do: “)
-        if choice == ‘1’:
-            merchant_shop.buy_item()
-        elif choice == ‘2’:
-            merchant_shop.sell_item()
-        elif choice == ‘3’:
-            merchant_shop.trade_item()
-        elif choice == ‘4’:
-            break
-
 def main_menu():
     print("Game Menu: ")
     print("1. Explore the maze")
@@ -44,12 +22,45 @@ def main_menu():
     if choice == '1':
         explore()
         print_s(monologue)
-        print("that was a good move")
+        print("that was a good move - malak")
+        main_menu()
     elif choice == '2':
         print(inventory)
+        viewer = input("To choose to view an item, press V").lower()
+        if viewer == 'v':
+            Inventory.view()
+        else: 
+            main_menu()
     else:
         Encounter.Merchant.trade()
-        print("oueeff that was a bad move")
+        print("oueeff that was a bad move -  malak")
+        main_menu()
+        
+class merchant_shop:
+    def __init__(self, player, inventory, prices):
+        self.player=player
+        self.inventory=inventory
+        self.prices=prices
+    def shop_menu():
+        while True:
+                print("Available items:")
+                for item in inventory:
+                    print(f"{item.name}, {item.type}: {prices[item]}")
+                    print("Shop Menu: ")
+                    print("1. Buy an item" )
+                    print("2. Sell an item")
+                    print("3. Trade an item")
+                    print("4. Return to main menu")
+
+                choice = input("What would you like to do: ")
+                if choice == '1':
+                    merchant_shop.buy_item()
+                elif choice == '2':
+                    merchant_shop.sell_item()
+                elif choice == '3':
+                    merchant_shop.trade_item()
+                elif choice == '4':
+                    break
 
 view_menu = input('press m to view the main menu: ').lower()
 if view_menu == 'm':

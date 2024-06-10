@@ -1,11 +1,15 @@
 import random
+import os
 import json
 import json
 import random
 monsters = open("./monsert.json", encoding="utf8")
 items = open("./thingys.json", encoding="utf8")
 npcs = open("./npcs.json", encoding="utf8")
-data = (json.load(monsters), json.load(items), json.load(npcs))
+data_monsters = (json.load(monsters))
+data_items = (json.load(items))
+data_npcs = (json.load(npcs))
+
 
 def explore():
     walk = input("Press F to walk forward.").lower()
@@ -20,8 +24,8 @@ class Encounter():
             self.name = name 
         def trade():
             print("You encountered a merchant!")
-            open(merchant.png)
-            ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "?").upper()
+            open('merchant.png')
+            ask_trade = input("Would you like to trade in your weapon for an upgraded weapon," +  "? Y or N ").upper()
             while ask_trade == 'Y':
                 trader_ans = random.randint(1,3)
                 if trader_ans == 1:
@@ -36,21 +40,66 @@ class Encounter():
                     trader_ans == 'No'
                     print('Trader declined :(')
                     break
-        class Merchant_shop(name, inventory, prices):
+            if ask_trade != 'Y':
+                print("Yeah, are you sure?")
+            
+        class Merchant_shop:
+            def __init__(self, name, inventory):
+                self.name = name
+                self.inventory = [ ]
+                self.inventory_items = [
+                {"name": f"{data_items['name']}", "type": f"{data_items['type']}", "price": 0+{data_items['price']}}
+                ]
+                #fill in all the items in json item file
+            def __str__(self):
+                return f"{self.name}, {self.inventory}, {self.inventory_items}"
             def sell_item(item):
-                item.remove(Hero.inventory)
+                item_forsale = input("Which item would you like to sell: ")
+                for item in Hero.inventory:
+                    print(f"{item['name']} - {item['price']}")
+                    if item_forsale == item['name']:
+                        Hero.xp = Hero.xp + 20
+                        Hero.money = Hero.money + item['price']
+                        print(f"Merchant bought {item['name']} for ${item['price']}. +20 XP! Current XP: {Hero.xp}. Current balance: {Hero.money}")
+                        return
+
             def buy_item(item):
-                #input: player chooses an item to buy, the price is subtracted from the player’s money, and they gain xp for buying something. Item is appended to their inventory.
-                Item_buy = input(“Which item would you like you buy":”)
-                for item in inventory:
-                    if item_buy == {item.name}:
+                for item in self.inventory:
+                    print(f"{item['name']} - {item['price']}")
+                    buy = input("Which item would you like you buy?:")
+                for item in self.inventory:
+                    if buy == {item['name']}:
                         item.append(Hero.inventory)
-                        Hero.money = Hero.money - item.price
+                        Hero.money = Hero.money - {item['price']}
+                        return Hero.money
+                        print(f"You bought the {item[name]} for {item[price]}. Current balance: {Hero.money}")
+                        return
                         
 
-            
-                
             def trade_item(item):
+                for item in Hero.inventory:
+                    print(f"{item['name']} - {item['price']}")
+                    hero_item = input("Which item would you like you trade?")
+                    if hero_item == {item.name}:
+                        merchant_items = [ ]
+                for merchant_item in self.inventory_items:
+                    if abs(item["price"] - merchant_item["price"]) < 10:
+                        merchant_items.append(merchant_item)
+                        print("Items available for trade:")
+                for i, item in enumerate(merchant_items, start=1):
+                        print(f"{i}. {item['name']} - {item['price']}")
+                        choice_item = input("Which item would you like to trade? Or press q to quit trade:  ")
+                        if choice_item.lower() == 'q':
+                                print("Quit trade.")
+                                return
+                        else:
+                            traded_item = merchant_items[choice_item - 1]
+                            self.inventory.append(traded_item)
+                            self.inventory.append(item)
+                            Hero.xp = Hero.xp + 20
+                            print(f"Traded {item['name']} for {traded_item['name']}. +20 XP!")
+                            return
+
 
 
     class Monster():
@@ -81,9 +130,9 @@ class Encounter():
                     choice = input("Choose your move: ")
 
                     if choice == "1":
-                        Hero.attack_monster()
+                        Hero.attack_monster(Hero.name, Monster.name)
                     elif choice == "2":
-                        Hero.taunt()
+                        Hero.taunt(Hero.name, Encounter.Monster.name)
                     elif choice == "3":
                         return
                     else:
@@ -130,8 +179,7 @@ class Encounter():
 
 
     def generate_opp():       
-        #encounter = random.randint(1,3)
-        encounter = 1
+        encounter = random.randint(1,3)
         if encounter == 1:
             Encounter.Monster.generate_mons()
             print("As you walk through the dark maze, you see all kind of creatures on the walls and in the shadows.")
@@ -244,17 +292,17 @@ class Inventory():
     
     def view():
         choice = input("Choose an item to view information.")
-        if choice == items['name'] & items['type'] == "Weapon":
+        if choice == data_items['name'] & data_items['type'] == "Weapon":
             print(f"{choice['name']}")
             print(f"Attack: {choice['atk']}")
             print(f"Type: {choice['type']}")
             print(f"Description: {choice['description']}")
-        elif choice == items['name'] & items['type'] == "Charm":
+        elif choice == data_items['name'] & data_items['type'] == "Charm":
             print(f"{choice['name']}")
             print(f"Type: {choice['type']}")
             print(f"Benefits: {choice['benefits']}")
             print(f"Description: {choice['description']}")              
-        if choice == items['name'] & items['type'] == "Weapon":
+        if choice == data_items['name'] & data_items['type'] == "Weapon":
             print(f"{choice['name']}")
             print(f"HP restored: {choice['hp_restored']}")
             print(f"Type: {choice['type']}")
