@@ -77,32 +77,6 @@ class Encounter():
                         return
                         
 
-            def trade_item(item):
-                for item in Hero.inventory:
-                    print(f"{item['name']} - {item['price']}")
-                    hero_item = input("Which item would you like you trade?")
-                    if hero_item == {item.name}:
-                        merchant_items = [ ]
-                for merchant_item in Merchant_shop.inventory_items:
-                    if abs(item["price"] - merchant_item["price"]) < 10:
-                        merchant_items.append(merchant_item)
-                        print("Items available for trade:")
-                for i, item in enumerate(merchant_items, start=1):
-                        print(f"{i}. {item['name']} - {item['price']}")
-                        choice_item = input("Which item would you like to trade? Or press q to quit trade:  ")
-                        if choice_item.lower() == 'q':
-                                print("Quit trade.")
-                                return
-                        else:
-                            traded_item = merchant_items[choice_item - 1]
-                            inventory.append(traded_item)
-                            inventory.append(item)
-                            Hero.xp = Hero.xp + 20
-                            print(f"Traded {item['name']} for {traded_item['name']}. +20 XP!")
-                            return
-
-
-
     class Monster():
         def __init__(self, name:str, hp:int, attack_power:int, drops:list, description:str):
             self.name=name
