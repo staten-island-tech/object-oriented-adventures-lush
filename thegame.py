@@ -6,6 +6,7 @@ from typeslow import *
 
 monologue = "in this game you will be fighting the most dangerous monsters. your goal is to complete the maze and defeat the monster and attack him using weapons. throughout the game you will have multiple enconters with the merchant. you, as the hero, will be able to gain xp through trade with the merchant. if you answer yes to trading with the merchant you will automatically be given 100 xp. for extra instruction and more information, replay the game. As the shadows fade and the hero is faced with the challenge ahead of them... Welcome to the maze of life, " + Hero.name + ". As you look at what you have in your bindle, you realize you came here unprepared. Let's start with a tutorial. go to README.md for instructions"
 
+print_s(monologue)
 
 
 inventory.append("Small dagger")
@@ -22,7 +23,6 @@ def main_menu():
     choice = input("What would you like to do? ")
     if choice == '1':
         explore()
-        print_s(monologue)
         print("that was a good move - malak")
         main_menu()
     elif choice == '2':
@@ -46,7 +46,7 @@ class merchant_shop:
         while True:
                 print("Available items:")
                 for item in inventory:
-                    print(f"{item.name}, {item.type}: {prices[item]}")
+                    print(f"{item.name}, {item.type}: {item.price}")
                     print("Shop Menu: ")
                     print("1. Buy an item" )
                     print("2. Sell an item")

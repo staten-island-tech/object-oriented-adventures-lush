@@ -1,7 +1,6 @@
 import random
 import os
 import json
-import json
 import random
 monsters = open("./monsert.json", encoding="utf8")
 items = open("./thingys.json", encoding="utf8")
@@ -30,7 +29,7 @@ class Encounter():
                 trader_ans = random.randint(1,3)
                 if trader_ans == 1:
                     trader_ans == 'Yes'
-                    Hero.self.xp += 50
+                    Hero.xp += 50
                     print("+50 XP")
                     Hero.health += 50
                     print("+50 Health Points")
@@ -43,14 +42,17 @@ class Encounter():
             if ask_trade != 'Y':
                 print("Yeah, are you sure?")
             
-        class Merchant_shop:
-            def __init__(self, name, inventory):
+        class Merchant_shop():
+
+            def __init__(self, name, inventory_items):
                 self.name = name
-                self.inventory = [ ]
                 self.inventory_items = [
                 {"name": f"{data_items['name']}", "type": f"{data_items['type']}", "price": 0+{data_items['price']}}
                 ]
                 #fill in all the items in json item file
+                with open('thingys.json') as f:
+                    thingys = json.load(f)
+                    self.inventory.append(thingys['name'])
             def __str__(self):
                 return f"{self.name}, {self.inventory}, {self.inventory_items}"
             def sell_item(item):
@@ -64,15 +66,14 @@ class Encounter():
                         return
 
             def buy_item(item):
-                for item in self.inventory:
+                for item in inventory:
                     print(f"{item['name']} - {item['price']}")
                     buy = input("Which item would you like you buy?:")
-                for item in self.inventory:
+                for item in inventory:
                     if buy == {item['name']}:
                         item.append(Hero.inventory)
                         Hero.money = Hero.money - {item['price']}
-                        return Hero.money
-                        print(f"You bought the {item[name]} for {item[price]}. Current balance: {Hero.money}")
+                        print(f"You bought the {item['name']} for {item['price']}. Current balance: {Hero.money}")
                         return
                         
 
@@ -82,7 +83,7 @@ class Encounter():
                     hero_item = input("Which item would you like you trade?")
                     if hero_item == {item.name}:
                         merchant_items = [ ]
-                for merchant_item in self.inventory_items:
+                for merchant_item in Merchant_shop.inventory_items:
                     if abs(item["price"] - merchant_item["price"]) < 10:
                         merchant_items.append(merchant_item)
                         print("Items available for trade:")
@@ -94,8 +95,8 @@ class Encounter():
                                 return
                         else:
                             traded_item = merchant_items[choice_item - 1]
-                            self.inventory.append(traded_item)
-                            self.inventory.append(item)
+                            inventory.append(traded_item)
+                            inventory.append(item)
                             Hero.xp = Hero.xp + 20
                             print(f"Traded {item['name']} for {traded_item['name']}. +20 XP!")
                             return
@@ -130,16 +131,16 @@ class Encounter():
                     choice = input("Choose your move: ")
 
                     if choice == "1":
-                        Hero.attack_monster(Hero.name, Monster.name)
+                        Hero.attack_monster(Hero.name, Encounter.Monster.name)
                     elif choice == "2":
                         Hero.taunt(Hero.name, Encounter.Monster.name)
                     elif choice == "3":
                         return
                     else:
                         print("Invalid choice. Please choose a valid option.")
-                    if Monster.hp <= 0:
+                    if {Encounter.Monster['hp']} <= 0:
                         print("You won! You earned 50 XP! Check your inventory for more items ;)")
-                        inventory.append(random_monster['drops'])
+                        inventory.append(Encounter.Monster['drops'])
                     if Hero.health <= 0:
                         print("You died. Game over.")
                         break
@@ -156,7 +157,7 @@ class Encounter():
         
         def take_damage(self, player_attack):
             self.health -= player_attack
-            print(f"{player.name} attacks {self.name} for {player_attack} damage!")
+            print(f"{Hero.name} attacks {self.name} for {player_attack} damage!")
 
         def __str__(self):
             return f"{self.name}, {self.hp}, {self.atk}, {self.drops}, {self.description}"
