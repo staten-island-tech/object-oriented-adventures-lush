@@ -30,9 +30,9 @@ class Encounter():
                 if trader_ans == 1:
                     pass
                     trader_ans == 'Yes'
-                    Hero['xp'] += 50
+                    Hero.xp += 50
                     print("+50 XP")
-                    Hero['health'] += 50
+                    Hero.health += 50
                     print("+50 Health Points")
                     print('The trader accepts the offer!')
                     break
@@ -107,10 +107,10 @@ class Encounter():
 
                     if choice == "1":
                         pass
-                        Hero.attack_monster(Hero.name, random_monster)
+                        Hero.attack_monster(Hero.name, random.monster)
                     elif choice == "2":
                         pass
-                        Hero.taunt(Hero.name, random_monster)
+                        Hero.taunt(Hero.name , random.monster)
                     elif choice == "3":
                         return
                     else:
