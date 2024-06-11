@@ -28,10 +28,11 @@ class Encounter():
             while ask_trade == 'Y':
                 trader_ans = random.randint(1,3)
                 if trader_ans == 1:
+                    pass
                     trader_ans == 'Yes'
-                    Hero.xp += 50
+                    Hero['xp'] += 50
                     print("+50 XP")
-                    Hero.health += 50
+                    Hero['health'] += 50
                     print("+50 Health Points")
                     print('The trader accepts the offer!')
                     break
@@ -89,7 +90,7 @@ class Encounter():
             def random_monster_gen():
                 with open('monsert.json') as f:
                     Monsters = json.load(f)
-                    random_monster = random.choice(Monsters)
+                random_monster = random.choice(Monsters)
                 print("You encountered a " + random_monster['name'] + "!")
                 print(f"HP: {random_monster['hp']}")
                 print(f"Attack: {random_monster['atk']}")
@@ -105,9 +106,11 @@ class Encounter():
                     choice = input("Choose your move: ")
 
                     if choice == "1":
-                        Hero.attack_monster(Hero.name, Encounter.Monster.name)
+                        pass
+                        Hero.attack_monster(Hero.name, random_monster)
                     elif choice == "2":
-                        Hero.taunt(Hero.name, Encounter.Monster.name)
+                        pass
+                        Hero.taunt(Hero.name, random_monster)
                     elif choice == "3":
                         return
                     else:
